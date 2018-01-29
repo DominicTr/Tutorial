@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tutorial 1</title>
+        <style>
+            #myBG {
+                position:fixed;
+                left:0px;
+                top:0px;
+                width:100vw;
+                height:100vh;
+                object-fit:cover;
+                object-position:center;
+            }
+            .thumbnails {
+                width:5vw;
+                height:20vh;
+                background-color:darkslategray;
+                position:relative;
+                margin:30px;
+                background-size:cover;
+                background-position:center;
+                opacity:0.5;
+                border-radius:25px;
+                border:2px solid #FFF;
+                transition:opacity 1s;
+            }
+            .thumbnails:hover {
+                opacity:1;
+            }
+            #controls {
+                position:absolute;
+                left:0px;
+                top:15vh;
+            }
+            #img1 {
+                background-image:url(img/1.jpg);
+            }
+            #img2 {
+                left:30px;
+                background-image:url(img/2.jpg);
+            }
+            #img3 {
+                left:30px;
+                background-image:url(img/3.jpg);
+            }
+            #img4 {
+                background-image:url(img/4.jpg);
+            }
+            
+            #info {
+                opacity:0;
+                position:absolute;
+                right:0px;
+                top:0px;
+                bottom:0px;
+                margin:auto;
+                height:50vh;
+                width:60vw;
+                transition:opacity 1s;
+                background-color:rgba(16, 47, 69, 0.83);
+                border-radius:15px;
+            }
+            #infoimg {
+                width:100%;
+                height:80%;
+                
+            }
+            #infotext {
+                width:100%;
+                height:20%;
+                padding:10px;
+                color:darkgrey;
+                text-align:center;
+                font-size:200%;
+            }
+            
+            #close {
+                position:absolute;
+                width:10px;
+                height:10px;
+                background-color:rgba(255, 0, 0, 0.62);
+                color:white;
+                left:-5px;
+                top:-5px;
+                padding:5px;
+                cursor:pointer;
+                padding:10px;
+            }
+        </style>
+        
+    </head>
+
+    <body>
+        
+        <video id="myBG" autoplay loop>
+            <source src="img/bg.mp4" />
+        </video>    
+        <div id="controls">
+            <div id="img1" class="thumbnails"></div>
+            <div id="img2" class="thumbnails"></div>
+            <div id="img3" class="thumbnails"></div>
+            <div id="img4" class="thumbnails"></div>
+       
+        </div>
+        
+        <div id="info">
+            <div id="infoimg"></div>
+            <div id="infotext"></div>
+            <div id="close">X</div>
+        </div>
+        
+    
+        <script>
+            document.getElementById("img1").addEventListener("click", function(){
+                document.getElementById("infoimg").style.backgroundImage = "url(img/DW.png)";
+                document.getElementById("infoimg").style.backgroundSize = "cover";
+                document.getElementById("infoimg").style.backgroundPosition = "center center";
+                document.getElementById("info").style.opacity = 1;
+                document.getElementById("infotext").innerHTML = "Join the Dark Side"
+            });
+            
+            document.getElementById("img2").addEventListener("click", function(){
+                document.getElementById("infoimg").style.backgroundImage = "url(img/JD.png)";
+                document.getElementById("infoimg").style.backgroundSize = "cover";
+                document.getElementById("infoimg").style.backgroundPosition = "center center";
+                document.getElementById("info").style.opacity = 1;
+                document.getElementById("infotext").innerHTML = "Join the Jedi Guardian"
+            });
+            
+            document.getElementById("img3").addEventListener("click", function(){
+                document.getElementById("infoimg").style.backgroundImage = "url(img/YD.jpg)";
+                document.getElementById("infoimg").style.backgroundSize = "cover";
+                document.getElementById("infoimg").style.backgroundPosition = "center center";
+                document.getElementById("info").style.opacity = 1;
+                document.getElementById("infotext").innerHTML = "Join the Jedi Consular"
+            });
+            
+            document.getElementById("img4").addEventListener("click", function(){
+                document.getElementById("infoimg").style.backgroundImage = "url(img/notime.jpg)";
+                document.getElementById("infoimg").style.backgroundSize = "cover";
+                document.getElementById("infoimg").style.backgroundPosition = "center center";
+                document.getElementById("info").style.opacity = 1;
+                document.getElementById("infotext").innerHTML = "Join no one"
+            });
+            
+            document.getElementById("close").addEventListener("click", function(){
+                document.getElementById("info").style.opacity = 0;
+            });
+        </script>
+    
+    </body>
+
+
+</html>
